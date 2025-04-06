@@ -35,10 +35,9 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'phone_number']
 
-    objects = UserManager()  # Set the custom manager here
 
     def __str__(self):
-        return self.email  # Use email for string representation of the user
+        return self.email  
 
     
     
