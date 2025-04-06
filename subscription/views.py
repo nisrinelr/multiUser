@@ -13,3 +13,8 @@ class SubscriptionView(generics.ListCreateAPIView):
     def get_queryset(self):
         return Subscription.objects.filter(user=self.request.user)
     
+class CreatePlan(generics.CreateAPIView):
+    serializer_class = SubscriptionPlanSerializer
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
+    
